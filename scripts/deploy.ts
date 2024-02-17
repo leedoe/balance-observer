@@ -21,9 +21,10 @@ const getBalance = async (): Promise<string[][]> => {
 
 async function main() {
   setInterval(async () => {
-    console.clear();
-    console.log(Date.now());
     const balances = await getBalance();
+    const date = new Date();
+    console.clear();
+    console.log(date.toLocaleString());
     console.table(balances);
   }, 5000);
 }
